@@ -1,0 +1,11 @@
+.service-icon-wap:hover i,
+.service-icon-wap:hover {
+    color: white !important;
+    background: green;
+    transition: 0.3s ease-in-out;
+}
+
+.image-size {
+    width: 90%;
+    height: auto;
+}

@@ -1,0 +1,25 @@
+{
+    "cSpell.words": [
+        "Soula"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#694a5b",
+        "activityBar.background": "#694a5b",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#20251a",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#694a5b",
+        "statusBar.background": "#4b3541",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#694a5b",
+        "statusBarItem.remoteBackground": "#4b3541",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#4b3541",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#4b354199",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#4b3541"
+}

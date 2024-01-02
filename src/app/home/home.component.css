@@ -1,0 +1,32 @@
+.s-image {
+    padding: 15px;
+    max-height: 100%;
+    width: auto;
+    margin-right: 5px;
+}
+
+.title {
+    font-size: 60px;
+}
+
+.description {
+    font-size: 40px;
+    line-height: 45px;
+}
+
+.d-info {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.background {
+    background-color: #cccbc4;
+}
+
+.custom-prev {
+    margin-left: -75px;
+}
+
+.custom-next {
+    margin-right: -75px;
+}

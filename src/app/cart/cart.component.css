@@ -1,0 +1,15 @@
+.buy {
+    background: green;
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.delete {
+    background: #fe980f;
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 0px;
+}

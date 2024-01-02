@@ -1,0 +1,110 @@
+<section class="bg-light">
+    <div class="container pt-1 pb-3">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1>Signature Styles</h1>
+                <p class="fw-bold slogan">Elevate Your Wardrobe with Our Exclusive Collection</p>
+            </div>
+            <div>
+                <div class="btn-group category">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Gender
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectGender('men')">Men</a></li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectGender('women')">Women</a></li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectGender('children')">Children</a>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="cancelSelectionGender()">Cancel</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group category">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Category
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectCategory('top')">Top</a></li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectCategory('bottom')">Bottom</a>
+                        </li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="selectCategory('shoes')">Shoes</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" [routerLink]="[]" (click)="cancelSelectionCategory()">Cancel</a>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="input-group input-group-sm"
+                    style="margin-right: 10px; order: 1; display: flex; justify-content: center; align-items: center;">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                        (click)="selectSize(selectedSize)">Size</button>
+                    <input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        class="form-control" style="max-width: 5rem;" [(ngModel)]="selectedSize">
+                    <button *ngIf="selectedSize" type="button" class="btn-close" aria-label="Close"
+                        (click)="cancelSelectionSize()"></button>
+                </div>
+                <div class="input-group input-group-sm"
+                    style="margin-right: 10px; order: 2; display: flex; justify-content: center; align-items: center;">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                        (click)="selectSeller(selectedSeller)">Seller</button>
+                    <input type="text" class="form-control" placeholder="" aria-label="Sizing example input"
+                        aria-describedby="button-addon1" class="form-control" style="max-width: 10rem;"
+                        [(ngModel)]="selectedSeller">
+                    <button *ngIf="selectedSeller" type="button" class="btn-close" aria-label="Close"
+                        (click)="cancelSelectionSeller()"></button>
+
+                </div>
+                <div style="margin-right: 25px; order: 3; display: flex; flex-direction: column; align-items: center;">
+                    <label for="customRange3" class="form-label">Price</label>
+                    <input type="range" min="0" max="300" step="1" id="customRange3" value="300" class="form-range"
+                        style="max-width: 20rem;" (input)="selectPrice($event)">
+                    <span class="d-block mt-2">{{ selectedPrice }} $</span>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="answer" class="toast align-items-center text-bg-success custom-toast show" role="alert"
+            aria-live="assertive" aria-atomic="true"
+            style="position: fixed; bottom: 0; right: 0; margin: 10px; z-index: 1050;">
+            <div class="d-flex">
+                <div class="toast-body">
+                    {{ answer }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close" (click)="reinitAnswer()"></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div *ngFor="let product of productList" class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src={{product.images[0]}} class="card-img-top" (click)="goToProduct(product)">
+                    <div class="card-body d-flex justify-content-between align-items-start">
+                        <div (click)="goToProduct(product)">
+                            <h5>{{product.name}}</h5>
+                            <h6>{{product.price}}$</h6>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <a href="">
+                                <fa-icon [icon]="iconLikedClothes" class="text-decoration-none text-dark icon-like"
+                                    style="font-size: 22px;"></fa-icon>
+                            </a>
+                            <a (click)="addToCart(product)">
+                                <fa-icon [icon]="iconCart" class="text-decoration-none text-dark icon-cart"
+                                    style="font-size: 22px;"></fa-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+.icon-like {
+    margin-right: 12px;
+}
+
+.icon-cart {
+    margin-right: 0px;
+    cursor: pointer;
+}
+
+.category {
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+.slogan {
+    margin-top: 17px;
+    margin-bottom: 40px;
+}
+
+#customRange3 {
+    width: 400px;
+}
+
+/* Ajoutez cette règle à votre fichier CSS */
+input[type="range"]::-webkit-slider-thumb {
+    background-color: #198754;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: #198754;
+}
+
+input[type="range"]::-ms-thumb {
+    background-color: #198754;
+}
+
+.custom-toast {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    z-index: 1050;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    /* Ombre aux bords du toast */
+}

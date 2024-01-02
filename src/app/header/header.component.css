@@ -1,0 +1,45 @@
+.slogan {
+    font-size: 13px;
+    font-weight: 500;
+    color: #213934;
+}
+
+.contact-info {
+    font-size: 12px;
+}
+
+.font-categ {
+    font-size: 19px;
+    font-weight: 500;
+    color: #213934;
+}
+
+.font-categ:hover {
+    color: green;
+}
+
+.items-space {
+    margin-right: 100px;
+    padding: 5px;
+}
+
+.nav-icon {
+    margin-right: 15px;
+}
+
+.cart {
+    top: 0.9rem;
+    right: 1rem;
+    padding: 0px 6px;
+    font-size: small;
+    background: rgb(221, 221, 221);
+}
+
+
+.likes {
+    top: 0.9rem;
+    right: 3.0rem;
+    padding: 0px 6px;
+    font-size: small;
+    background: rgb(221, 221, 221);
+}
