@@ -87,7 +87,7 @@ export class ProductListingComponent implements OnInit {
   }
 
   refreshProductList(): void {
-    this.productService.getProductList(this.selectedCategory, this.selectedGender, this.selectedPrice, this.selectedSize, this.selectedSeller).subscribe((result) => {
+    this.productService.getProductList(this.selectedCategory, this.selectedGender, undefined, this.selectedSize, this.selectedSeller).subscribe((result) => {
       console.warn(result);
       if (result) {
         this.productList = result;

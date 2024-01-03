@@ -13,7 +13,7 @@ export class ProductService {
 
 
   getProductById(id: number) {
-    const url = `${this.apiUrl}/product/${id}`;
+    const url = `${this.apiUrl}/products/${id}`;
     return this.http.get<product>(url);
   }
 
@@ -35,7 +35,4 @@ export class ProductService {
 
     return this.http.get<product[]>(url);
   }
-
-
-
 }
