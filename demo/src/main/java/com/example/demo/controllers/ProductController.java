@@ -45,7 +45,6 @@ public class ProductController {
 
         // Initialize variables for all parameters
         String category = null;
-
         String gender = null;
         String price = null;
         String size = null;
@@ -79,7 +78,7 @@ public class ProductController {
             }
         }
 
-        // Example of using the ProductService to get filtered products
+        // Using the ProductService to get filtered products
         return productService.getFilteredProducts(category, gender, price, size, seller);
     }
 
