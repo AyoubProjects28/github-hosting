@@ -14,10 +14,17 @@ export class SharedProductService {
 
   constructor(private http: HttpClient) { }
 
-  addToCart(product: product) {
+  addToCart(product: product, quantity: number = 1) {
     const url = `${this.apiUrl}/addToCart`;
     console.log('Add product to API');
-    return this.http.post<void>(url, product).subscribe(
+
+    // Create a payload object that includes both the product and quantity
+    const payload = {
+      product: product,
+      quantity: quantity
+    };
+
+    return this.http.post<void>(url, payload).subscribe(
       () => console.log('Product added successfully'),
       (error) => console.error('Error adding product:', error)
     );

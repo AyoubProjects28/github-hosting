@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { product } from 'src/app/data-type';
 import { ProductService } from '../shop-service/product.service';
+import { SharedProductService } from 'src/app/shared-services/shared-product.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -16,7 +17,8 @@ export class DetailProductComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router, /*ActivatedRoute pour récupérer les paramètres de l’URL, Router pour naviguer*/
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: SharedProductService
   ) {
   }
 
@@ -34,8 +36,13 @@ export class DetailProductComponent {
     this.router.navigate(['/shop']);
   }
 
-  addToCart(product: product, quantity?: number) {
-    //ajouter {{quantity}} x product dans le cart (une liste de product)
-    // !!!   if quantity < product.stock
+  addToCart(product: product, quantity: number = 1) {
+    if (quantity <= product.stock) {
+      this.cartService.addToCart(product, quantity);
+    }
+    else {
+      console.log("You orderd all the stock, you should delete the product if it has been payed");
+      throw new Error('The quantity ordered is out of stock. Please select a lower quantity.');
+    }
   }
 }
