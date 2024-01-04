@@ -12,8 +12,10 @@ public class CartService {
 
     private final List<Product> cartProductList = new ArrayList<>();
 
-    public void addToCart(Product product) {
-        cartProductList.add(product);
+    public void addToCart(Product product, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            cartProductList.add(product);
+        }
     }
 
     public List<Product> getCartProductList() {

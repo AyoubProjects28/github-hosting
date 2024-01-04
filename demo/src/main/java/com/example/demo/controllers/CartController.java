@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.datatypes.AddToCartRequest;
 import com.example.demo.datatypes.Product;
 import com.example.demo.services.CartService;
 
@@ -20,8 +21,8 @@ public class CartController {
     private final CartService cartService;
 
     @PostMapping("/addToCart")
-    public void addToCart(@RequestBody Product product) {
-        cartService.addToCart(product);
+    public void addToCart(@RequestBody AddToCartRequest request) {
+        cartService.addToCart(request.getProduct(), request.getQuantity());
     }
 
     @PostMapping("/deleteFromCart")
