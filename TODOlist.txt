@@ -1,0 +1,3 @@
+//TODO Faire la partie login seller, et login user
+C'est à dire que lorsqu'on clique sur les icones login en haut à droite (login_seller et login_user),
+on doit pouvoir soit rediriger vers une 

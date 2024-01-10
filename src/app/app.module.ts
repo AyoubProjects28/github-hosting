@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopModule } from './shop/shop.module';
 import { CartComponent } from './cart/cart.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartComponent } from './cart/cart.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    ShopModule
+    ShopModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
