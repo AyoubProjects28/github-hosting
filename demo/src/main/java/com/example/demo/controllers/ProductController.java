@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,18 @@ public class ProductController {
     public ResponseEntity<List<Product>> getAllProduct() {
         return ResponseEntity.ok(productService.getProductList());
     }
+
+    // @PreAuthorize("hasRole('USER')")
+    // @GetMapping("/user")
+    // public String checkUser() {
+    // return "Hello User";
+    // }
+
+    // @PreAuthorize("hasRole('ADMIN')")
+    // @GetMapping("/admin")
+    // public String checkAdmin() {
+    // return "Hello Admin";
+    // }
 
     @GetMapping("/products/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable Integer id) {
