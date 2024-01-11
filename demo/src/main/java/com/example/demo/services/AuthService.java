@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.datatypes.AuthRequest;
+import com.example.demo.datatypes.AuthResponse;
 import com.example.demo.datatypes.User;
 
 @Service
@@ -23,7 +24,7 @@ public class AuthService {
         userList.add(new User(5, "Eva Brown", "eva@example.com", "passwordXYZ", "Extra user info"));
     }
 
-    public ResponseEntity<String> loginUser(AuthRequest authRequest) {
+    public ResponseEntity<AuthResponse> loginUser(AuthRequest authRequest) {
         // Récupérez les informations d'identification de la requête
         String username = authRequest.getUsername();
         String password = authRequest.getPassword();
@@ -38,10 +39,11 @@ public class AuthService {
         // Vérifiez si l'utilisateur a été trouvé et si le mot de passe correspond
         if (foundUser != null && foundUser.getPassword().equals(password)) {
             // L'utilisateur a été authentifié avec succès
-            return ResponseEntity.ok("Authentication successful for USER");
+            return ResponseEntity.ok(new AuthResponse("Authentication successful for USER"));
         } else {
             // Échec de l'authentification
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Authentication failed for USER");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(new AuthResponse("Authentication failed for USER"));
         }
     }
 

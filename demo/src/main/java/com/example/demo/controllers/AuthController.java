@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.datatypes.AuthRequest;
+import com.example.demo.datatypes.AuthResponse;
 import com.example.demo.services.AuthService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login_user")
-    public ResponseEntity<String> loginUser(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<AuthResponse> loginUser(@RequestBody AuthRequest authRequest) {
         return authService.loginUser(authRequest);
     }
 }
