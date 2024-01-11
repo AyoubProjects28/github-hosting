@@ -31,6 +31,7 @@ export class AuthService {
       }),
       catchError(error => {
         // Traitement de l'erreur en cas d'échec d'authentification
+        console.log(error);
         if (error.status === 401) {
           // Retournez un observable avec un message d'erreur
           return throwError(() => new Error('Authentication failed. Incorrect username or password.'));
